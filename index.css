@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */
+@font-face {
+    font-family: 'FontinSmallCaps';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/fontin-smallcaps-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FontinRegular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/fontin-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FontinItalic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/fontin-italic-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FontinBold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/fontin-bold-webfont.woff') format('woff');
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000 url('images/background.jpg') no-repeat top center;
+    background-attachment: fixed;
+    background-size: contain;
+    color: #a38d6d;
+    font-family: 'FontinRegular', Verdana, Arial, Helvetica, sans-serif;
+    padding-bottom: 200px;
+}
+
+#content {
+    width: 80%;
+    margin: auto;
+}
+
+.card,
+.mastery-card {
+    border: 1px solid;
+    border-color: #141414;
+    background-color: #0c0b0b9d;
+    margin: auto;
+    width: 49%;
+    display: flex;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.card {
+    padding: 10px 0;
+    position: relative;
+}
+
+.card .name,
+.mastery-card .name {
+    font-weight: bold;
+}
+
+.card .name {
+    font-size: 1.2rem;
+}
+
+.mastery-card .name {
+    font-size: 1.6rem;
+}
+
+.card .icon {
+    border-radius: 50%;
+}
+
+.card .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 60px;
+}
+
+.card .right {
+    margin-right: 10px;
+}
+
+.card .stats {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.card.tooltip:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: -24px;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #ad9c82;
+    background: rgb(10, 10, 10);
+    border: 1px solid;
+    border-color: #141414;
+    z-index: 999;
+    white-space: pre-line;
+    font-family: 'FontinItalic', Verdana, Arial, Helvetica, sans-serif;
+    font-style: italic;
+    display: none;
+    pointer-events: none;
+}
+
+.card.tooltip:hover:before {
+    display: block;
+}
+
+.card .stats li {
+    white-space: pre-line;
+}
+
+.card .icon {
+    border: 1px solid #a38d6d;
+    box-shadow: 0px 0px 0px 2px #141414;
+}
+
+.card.keystone .left {
+    width: 80px;
+}
+
+.mastery-card .center {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.mastery-card .icon {
+    margin-left: -24px;
+}
+
+.section {
+    z-index: 9999;
+    flex-basis: 100%;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    text-shadow: -1px 1px 1px #686257, 1px 1px 1px#686257, 1px -1px 0#686257, -1px -1px 0#686257;
+}
+
+#modified {
+    display: flex;
+    flex-wrap: wrap;
+}
