@@ -3,6 +3,9 @@ const masteryCardTemplate = document.getElementById('mastery-card')
 const addedBlock = document.getElementById('added')
 const removedBlock = document.getElementById('removed')
 const modifiedBlock = document.getElementById('modified')
+const menuAddedBlock = document.getElementById('menu-added')
+const menuRemovedBlock = document.getElementById('menu-removed')
+const menuModifiedBlock = document.getElementById('menu-modified')
 
 function displayNode(block, node, version) {
     const template = node.mastery ? masteryCardTemplate : cardTemplate
@@ -39,6 +42,7 @@ function displayNode(block, node, version) {
 
 if (data.added.length === 0) {
     addedBlock.style.display = 'none'
+    menuAddedBlock.style.display = 'none'
 } else {
     for (const node of data.added) {
         displayNode(addedBlock, node, data.new)
@@ -47,6 +51,7 @@ if (data.added.length === 0) {
 
 if (data.removed.length === 0) {
     removedBlock.style.display = 'none'
+    menuRemovedBlock.style.display = 'none'
 } else {
     for (const node of data.removed) {
         displayNode(removedBlock, node, data.old)
@@ -55,6 +60,7 @@ if (data.removed.length === 0) {
 
 if (data.modified.length === 0) {
     modifiedBlock.style.display = 'none'
+    menuModifiedBlock.style.display = 'none'
 } else {
     for (const nodes of data.modified) {
         displayNode(modifiedBlock, nodes.old, data.old)

@@ -1,0 +1,7 @@
+Disclaimer:
+
+I am using the json files provided by GGG as is, therefore, any changes made after the release of said files during the league are not accounted for.
+
+I don't have any way to keep track of them.
+
+So it is possible that some changes tracked here may have already been part of the last iteration of the skilltree and not really from the new league balance.

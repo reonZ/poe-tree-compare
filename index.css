@@ -99,29 +99,32 @@ body {
     padding-left: 20px;
 }
 
-.card.tooltip:before {
+.tooltip:before {
     content: attr(data-tooltip);
     position: absolute;
+    background: rgb(10, 10, 10);
+    border: 1px solid;
+    border-color: #141414;
+    z-index: 99;
+    white-space: pre-line;
+    display: none;
+    pointer-events: none;
+    padding: 10px;
+}
+
+.card.tooltip:before {
     top: 100%;
     left: 50%;
     margin-top: -24px;
     transform: translateX(-50%);
     width: calc(100% - 20px);
-    padding: 10px;
     font-size: 0.9rem;
     color: #ad9c82;
-    background: rgb(10, 10, 10);
-    border: 1px solid;
-    border-color: #141414;
-    z-index: 999;
-    white-space: pre-line;
     font-family: 'FontinItalic', Verdana, Arial, Helvetica, sans-serif;
     font-style: italic;
-    display: none;
-    pointer-events: none;
 }
 
-.card.tooltip:hover:before {
+.tooltip:hover:before {
     display: block;
 }
 
@@ -149,7 +152,7 @@ body {
 }
 
 .section {
-    z-index: 9999;
+    z-index: 999;
     flex-basis: 100%;
     padding: 10px;
     position: sticky;
@@ -161,4 +164,49 @@ body {
 #modified {
     display: flex;
     flex-wrap: wrap;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 10px;
+    font-family: 'FontinSmallCaps', Verdana, Arial, Helvetica, sans-serif;
+}
+
+#menu div {
+    margin-bottom: 8px;
+}
+
+#menu a:link,
+#menu a:visited,
+#menu a:hover,
+#menu a:active {
+    text-decoration: none;
+    color: #a38d6d;
+    font-family: 'FontinSmallCaps', Verdana, Arial, Helvetica, sans-serif;
+}
+
+#disclaimer {
+    border: 2px solid #a38d6d;
+    border-radius: 50%;
+    position: fixed;
+    font-weight: bold;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#disclaimer.tooltip:before {
+    top: 0;
+    left: -100%;
+    transform: translateX(-100%);
+    width: 600px;
 }
