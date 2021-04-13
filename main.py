@@ -3,8 +3,8 @@
 import json
 
 dev = False
-old_version = "3.12"
-new_version = "3.13"
+old_version = "3.13"
+new_version = "3.14"
 
 
 def parse_string(string):
